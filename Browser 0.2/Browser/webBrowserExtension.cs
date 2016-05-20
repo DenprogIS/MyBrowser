@@ -5,7 +5,8 @@ using System;
 namespace Browser
 {
     public static class webBrowserExtension
-    { 
+    {
+        private static int id;
         public static void doScreenshot(this WebControl webBrowser, string filePath)
         {
             using (WebView vw = WebCore.CreateWebView(1024, 768))

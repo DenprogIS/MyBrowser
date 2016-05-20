@@ -16,7 +16,7 @@ namespace Browser
     public partial class Form1 : Form
     {
         private Keys g_lastKey;
-        private bool btn_pressed;
+        private bool btn_pressed=true;
         private WebControl webBrowserConfig = new WebControl();
 
         public Form1()
@@ -43,25 +43,18 @@ namespace Browser
         {
             FormClosing += Form1_FormClosing;
             webBrowser.ShowCreatedWebView += WebBrowser_ShowCreatedWebView;
-            //webBrowser.LoadingFrameComplete += WebBrowser_LoadingFrameComplete;
-            webBrowser.DocumentReady += WebBrowser_DocumentReady;
+            webBrowser.LoadingFrameComplete += WebBrowser_LoadingFrameComplete;
+            webBrowser.LoadingFrame += WebBrowser_LoadingFrame;
         }
 
-        private void WebBrowser_DocumentReady(object sender, DocumentReadyEventArgs e)
+        private void WebBrowser_LoadingFrame(object sender, LoadingFrameEventArgs e)
         {
-            elementHostHeadpiece.Visible = false;
+            headpiceShow();
         }
 
         private void LoadUrl(string url)
         {
-            try
-            {
-                headpiceShow();
-                webBrowser.Source = new Uri(url);
-            }catch(Exception ex)
-            {
-                int a = 0;
-            }
+           webBrowser.Source = new Uri(url);
         }
 
         private void headpiceShow()
@@ -206,7 +199,10 @@ namespace Browser
         private void button1_Click(object sender, EventArgs e)
         {
             if (btn_pressed)
+            {
                 webBrowserConfig = webBrowser;
+                btn_pressed = false;
+            }
             else
                 webBrowser = webBrowserConfig;
         }

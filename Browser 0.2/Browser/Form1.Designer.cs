@@ -42,7 +42,6 @@
             this.elementHostBackBtn = new System.Windows.Forms.Integration.ElementHost();
             this.back_btn1 = new BrowserStyle.back_btn();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,7 +109,7 @@
             this.elementHostHeadpiece.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.elementHostHeadpiece.Location = new System.Drawing.Point(2, 290);
+            this.elementHostHeadpiece.Location = new System.Drawing.Point(2, 32);
             this.elementHostHeadpiece.Name = "elementHostHeadpiece";
             this.elementHostHeadpiece.Size = new System.Drawing.Size(813, 484);
             this.elementHostHeadpiece.TabIndex = 7;
@@ -140,22 +139,11 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(740, 32);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 516);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.elementHostHeadpiece);
             this.Controls.Add(this.radioButtonYandexOrGoogle);
             this.Controls.Add(this.radioButtonGoogleOrYandex);
@@ -187,7 +175,6 @@
         private System.Windows.Forms.Integration.ElementHost elementHostHeadpiece;
         private BrowserStyle.blinds blinds1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button button1;
     }
 }
 
